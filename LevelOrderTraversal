@@ -1,0 +1,19 @@
+class Solution {
+public:
+    void dfs(TreeNode* root,int level,vector<vector<int> >&v)
+    {
+        if(root==NULL) return ;
+        if(level>=v.size())
+            v.push_back({});
+        v[level].push_back(root->val);
+        dfs(root->left,level+1,v);
+        dfs(root->right,level+1,v);
+        return;
+    }
+    vector<vector<int>> levelOrder(TreeNode* root) {
+        vector<vector<int>>v;
+        if(root==NULL) return v;
+        dfs(root,0,v);
+        return v;
+    }
+};
