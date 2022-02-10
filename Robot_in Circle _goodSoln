@@ -25,7 +25,7 @@
             } 
             
         }
-        
+        //..check finally if value at origin or the direction is not facing upwards.. same as (i!=0)
         if(x==0 && y==0 || current_dir!='N')
             return true;
         
