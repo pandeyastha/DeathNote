@@ -1,0 +1,18 @@
+if(n==1 &&k==1)return 0;
+length doubles every lane;
+till same length, the upper string is copied, after that its complement is present;
+ hensce staright forwrd recursivev code;
+ 
+ 
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ class Solution {
+public:
+    int kthGrammar(int n, int k) {
+        if(n==1 &&k==1) return 0;
+        
+        int mid=pow(2,n-1)/2;
+        if(k<=mid) return kthGrammar(n-1,k);
+        else return !(kthGrammar(n-1,k-mid));
+    }
+};
